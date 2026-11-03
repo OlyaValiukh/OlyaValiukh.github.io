@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Або-Або</title>
+<meta name="description" content="Гра для компанії на одному телефоні. Відкривайте дилему, сперечайтеся, обирайте А чи Б — і дивіться, як обрали інші компанії у світі.">
+<link rel="canonical" href="https://olyavaliukh.github.io/abo-abo/">
+<link rel="icon" href="/assets/icon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:title" content="Або-Або">
+<meta property="og:description" content="Гра для компанії на одному телефоні. Відкривайте дилему, сперечайтеся, обирайте А чи Б — і дивіться, як обрали інші компанії у світі.">
+<meta property="og:image" content="https://olyavaliukh.github.io/assets/icon.png">
+<link rel="stylesheet" href="/assets/style.css">
+<script>
+(function () {
+var ua = navigator.userAgent || '';
+var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+var android = /Android/.test(ua);
+var appStore = '', googlePlay = '';
+if (ios && appStore) { location.replace(appStore); return; }
+if (android && googlePlay) { location.replace(googlePlay); return; }
+var en = !(navigator.languages || [navigator.language || '']).some(function (l) { return /^(uk|ru)/i.test(l); });
+if (en && !/[?&]lang=uk/.test(location.search)) { location.replace('/abo-abo/en/' + location.search); return; }
+})();
+</script>
+</head>
+<body>
+<main>
+<header class="top">
+<a class="brand" href="/abo-abo/"><img src="/assets/icon.png" alt="">Або-Або</a>
+<nav class="lang"><span>УКР</span><a href="/abo-abo/en/" hreflang="en">EN</a></nav>
+</header>
+
+<section class="card hero">
+<img class="icon" src="/assets/icon.png" alt="">
+<h1>Або-Або</h1>
+<p>Гра для компанії на одному телефоні. Відкривайте дилему, сперечайтеся, обирайте А чи Б — і дивіться, як обрали інші компанії у світі.</p>
+<div class="ab"><span class="a">А</span><span class="or">або</span><span class="b">Б</span></div>
+<div class="stores"><span class="store soon"><small>Скоро</small>App Store</span><span class="store soon"><small>Скоро</small>Google Play</span></div>
+</section>
+<ol class="steps"><li>Оберіть пак: «Веселі та смішні», «Фільми», «Для пари», «Філософські», «Життя в айті».</li><li>Торкніться карти — зʼявиться дилема. Обговоріть її разом.</li><li>Свайп ліворуч — «А», праворуч — «Б». Побачите, як обрав світ.</li></ol>
+
+</main>
+<footer>
+<a href="/abo-abo/">Про гру</a>
+<a href="/abo-abo/privacy/">Політика конфіденційності</a>
+<a href="/abo-abo/support/">Підтримка</a>
+<span>Авторка — Ольга Валюх</span>
+</footer>
+</body>
+</html>

@@ -1,0 +1,80 @@
+/* Стиль сайту гри — ті самі кольори й шрифти, що в застосунку (lib/core/theme.dart). */
+@font-face { font-family: "Unbounded"; src: url("fonts/Unbounded-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Manrope"; src: url("fonts/Manrope-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Manrope"; src: url("fonts/Manrope-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+
+:root {
+  --table: #F6F1EA;
+  --card: #FFFDF9;
+  --text: #1D1B22;
+  --muted: #65606E;
+  --line: #E4DDD3;
+  --a: #C2410C;
+  --b: #1D4ED8;
+  --brand: #5B4BDB;
+  --shadow: 0 6px 24px rgba(29, 27, 34, .08);
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --table: #17151C;
+    --card: #221F29;
+    --text: #F3EFF8;
+    --muted: #ABA4B6;
+    --line: #34303D;
+    --a: #FB8A5B;
+    --b: #7EA2FF;
+    --brand: #A99FFF;
+    --shadow: 0 6px 24px rgba(0, 0, 0, .4);
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--table);
+  color: var(--text);
+  font: 400 17px/1.6 "Manrope", system-ui, sans-serif;
+}
+main { max-width: 720px; margin: 0 auto; padding: 24px 16px 48px; }
+a { color: var(--brand); text-underline-offset: 3px; }
+h1, h2 { font-family: "Unbounded", system-ui, sans-serif; letter-spacing: -.5px; line-height: 1.2; }
+h1 { font-size: clamp(28px, 7vw, 40px); margin: 0 0 12px; }
+h2 { font-size: 21px; margin: 36px 0 8px; }
+strong { font-weight: 700; }
+ul, ol { padding-left: 1.3em; }
+li { margin: 4px 0; }
+li > ul, li > ol { margin: 4px 0; }
+
+.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 24px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font: 700 18px "Unbounded", sans-serif; }
+.brand img { width: 36px; height: 36px; border-radius: 9px; }
+.lang { font-weight: 700; font-size: 15px; }
+.lang a, .lang span { padding: 6px 10px; border-radius: 10px; text-decoration: none; }
+.lang span { background: var(--card); color: var(--text); }
+
+.card { background: var(--card); border-radius: 24px; padding: 24px; box-shadow: var(--shadow); }
+.hero { text-align: center; padding: 36px 24px; }
+.hero .icon { width: 112px; height: 112px; border-radius: 26px; box-shadow: var(--shadow); }
+.hero p { color: var(--muted); margin: 0 auto; max-width: 460px; }
+.ab { display: flex; justify-content: center; gap: 10px; margin: 24px 0 8px; font: 700 16px "Unbounded", sans-serif; }
+.ab span { padding: 10px 18px; border-radius: 16px; color: #fff; }
+.ab .a { background: var(--a); } .ab .b { background: var(--b); }
+.ab .or { background: none; color: var(--muted); padding: 10px 0; font-family: "Manrope", sans-serif; }
+@media (prefers-color-scheme: dark) { .ab .a, .ab .b { color: #17151C; } }
+
+.stores { display: grid; gap: 12px; margin-top: 28px; }
+@media (min-width: 520px) { .stores { grid-template-columns: 1fr 1fr; } }
+.store { display: block; padding: 14px 18px; border-radius: 16px; background: var(--text); color: var(--table); text-decoration: none; font-weight: 700; text-align: center; }
+.store small { display: block; font-weight: 400; opacity: .75; font-size: 13px; }
+.store.soon { background: transparent; color: var(--muted); border: 2px dashed var(--line); }
+
+.steps { display: grid; gap: 12px; margin: 28px 0 0; padding: 0; list-style: none; counter-reset: s; }
+.steps li { background: var(--card); border-radius: 20px; padding: 16px 18px 16px 60px; position: relative; margin: 0; box-shadow: var(--shadow); }
+.steps li::before { counter-increment: s; content: counter(s); position: absolute; left: 18px; top: 14px; width: 30px; height: 30px; border-radius: 50%; background: var(--brand); color: var(--card); display: grid; place-items: center; font: 700 15px "Unbounded", sans-serif; }
+
+.muted { color: var(--muted); }
+.date { color: var(--muted); font-style: normal; }
+footer { max-width: 720px; margin: 0 auto; padding: 0 16px 32px; color: var(--muted); font-size: 15px; display: flex; flex-wrap: wrap; gap: 8px 20px; }
+footer a { color: var(--muted); }
