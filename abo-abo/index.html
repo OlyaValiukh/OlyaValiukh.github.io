@@ -17,7 +17,7 @@
 var ua = navigator.userAgent || '';
 var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
 var android = /Android/.test(ua);
-var appStore = '', googlePlay = '';
+var appStore = 'https://apps.apple.com/app/id6831537155', googlePlay = '';
 if (ios && appStore) { location.replace(appStore); return; }
 if (android && googlePlay) { location.replace(googlePlay); return; }
 var en = !(navigator.languages || [navigator.language || '']).some(function (l) { return /^(uk|ru)/i.test(l); });
@@ -37,7 +37,7 @@ if (en && !/[?&]lang=uk/.test(location.search)) { location.replace('/abo-abo/en/
 <h1>Або-Або</h1>
 <p>Гра для компанії на одному телефоні. Відкривайте дилему, сперечайтеся, обирайте А чи Б — і дивіться, як обрали інші компанії у світі.</p>
 <div class="ab"><span class="a">А</span><span class="or">або</span><span class="b">Б</span></div>
-<div class="stores"><span class="store soon"><small>Скоро</small>App Store</span><span class="store soon"><small>Скоро</small>Google Play</span></div>
+<div class="stores"><a class="store" href="https://apps.apple.com/app/id6831537155"><small>Завантажити в</small>App Store</a><span class="store soon"><small>Скоро</small>Google Play</span></div>
 </section>
 <ol class="steps"><li>Оберіть пак: «Веселі та смішні», «Фільми», «Для пари», «Філософські», «Життя в айті».</li><li>Торкніться карти — зʼявиться дилема. Обговоріть її разом.</li><li>Свайп ліворуч — «А», праворуч — «Б». Побачите, як обрав світ.</li></ol>
 
